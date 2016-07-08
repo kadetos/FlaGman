@@ -124,9 +124,9 @@ endif;
 					<h5 class="text-center">Игроки</h5>
 					<table class="table table-bordered" id="players">
 						<thead>
-						<th>Ник</th>
-						<th style="text-align: center">Счет</th>
-						<th style="text-align: center">Время</th>
+						    <th>Ник</th>
+                            <th style="text-align: center">Счет</th>
+                            <th style="text-align: center">Время</th>
 						</thead>
 						<tbody>
 						<?php foreach($info['playersinfo'] as $player):?>
@@ -191,5 +191,5 @@ endif;
         <h2>Детали сервера &laquo;<?php echo $server->hostname; ?>&raquo;</h2>
         <div class="alert alert-error">Сервер не отвечает. Возможно сервер выключен или сменяет карту</div>
     <?php endif; ?>
-    
+
 </div>
