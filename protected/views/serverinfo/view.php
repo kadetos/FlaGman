@@ -17,27 +17,23 @@ $info = $server->getInfo();
 $this->pageTitle = Yii::app()->name .' :: Сервер ' . $info['name'];
 
 $this->breadcrumbs=array(
-	'Серверы'=>array('index'),
-	$info['name'],
+    'Серверы'=>array('index'),
+    $info['name'],
 );
 
 // Если страницу запрашивает аякс, то не отдаем ему жабаскрипт совсем
 if(!Yii::app()->request->isAjaxRequest):
-
-if(!Yii::app()->user->isGuest)
-{
-	Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl.'/js/jquery.contextmenu.js');
-	Yii::app()->clientScript->registerCssFile(Yii::app()->baseUrl.'/css/jquery.contextmenu.css');
-	Yii::app()->clientScript->registerScript('playerAction', "
-	setInterval('reloadplayers()', 5000);
-	function reloadplayers()
-	{
-		$.post('',{'".Yii::app()->request->csrfTokenName."': '".Yii::app()->request->csrfToken."'},function(data){ $('#container').html(data); });
-	}
-	function playeraction(player, action, reason, time)
-	{
-		var reasontext;
-		var profile = false;
+    if(!Yii::app()->user->isGuest)
+    {
+        Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl.'/js/jquery.contextmenu.js');
+        Yii::app()->clientScript->registerCssFile(Yii::app()->baseUrl.'/css/jquery.contextmenu.css');
+        Yii::app()->clientScript->registerScript('playerAction', "setInterval('reloadplayers()', 5000);	function reloadplayers() { 
+        $.post('',{'".Yii::app()->request->csrfTokenName."': '".Yii::app()->request->csrfToken."'},function(data){ $('#container').html(data); });
+        }
+        function playeraction(player, action, reason, time)
+        {
+        var reasontext;
+        var profile = false;
 		var reason = null;
 
 		switch (action)
@@ -106,129 +102,91 @@ if(!Yii::app()->user->isGuest)
 		});
 	});
 	", CClientScript::POS_END
-	);
-
-}
+        );
+    }
 endif;
 ?>
 
 <div id="container">
 	<?php if($info): ?>
-	<h2>Детали сервера &laquo;<?php echo $info['name']; ?>&raquo;</h2>
-	<?php if(!Yii::app()->user->isGuest): ?>
-	<p class="text-success">
-		<i class="icon-exclamation-sign"></i>
-		<i>Нажмите правой кнопкой на игроке для вызова меню</i>
-	</p>
-	<?php endif; ?>
+		<h2>Детали сервера &laquo;<?php echo $info['name']; ?>&raquo;</h2>
 
-	<div class="row-fluid">
-		<div class="span7">
-			<?php if(is_array($info['playersinfo']) && !empty($info['playersinfo'])): ?>
-			<h5 class="text-center">Игроки</h5>
-			<table class="table table-bordered" id="players">
-				<thead>
-					<th>
-						Ник
-					</th>
-					<th style="text-align: center">
-						Счет
-					</th>
-					<th style="text-align: center">
-						Время
-					</th>
-				</thead>
-				<tbody>
-					<?php
-					foreach($info['playersinfo'] as $player):?>
-						<tr class="context-menu-one" id="<?php echo CHtml::encode($player['name'])?>">
-							<td><?php echo CHtml::encode($player['name'])?></td>
-							<td style="text-align: center"><?php echo CHtml::encode($player['score'])?></td>
-							<td style="text-align: center"><?php echo function_exists('query_live') ? $player['time'] : Prefs::date2word(intval($player['time']), FALSE, TRUE)?></td>
-						</tr>
-					<?php endforeach;?>
-				</tbody>
-			</table>
-			<?php else: ?>
-			<div class="alert alert-error">Нет игроков</div>
-			<?php endif; ?>
-		</div>
-		<div class="span5">
-			<h5 class="text-center">Информация</h5>
-			<table class="table table-bordered">
-				<tr>
-					<td style="text-align: center" colspan="2">
-						<?php echo $info['mapimg']; ?>
-					</td>
-				</tr>
-				<tr>
-					<td class="bold">
-						Адрес:
-					</td>
-					<td>
-						 <?php
-						 echo CHtml::link(
-								 CHtml::encode($server->address),
-								 'steam://connect/' . CHtml::encode($server->address)
-							 );
-						 ?>
-					</td>
-				</tr>
-				<tr>
-					<td class="bold">
-						Карта:
-					</td>
-					<td>
-						 <?php echo CHtml::encode($info['map']); ?>
-					</td>
-				</tr>
-				<tr>
-					<td class="bold">
-						Игроки:
-					</td>
-					<td>
-						 <?php
-						 echo CHtml::encode($info['players']) . '/' . CHtml::encode($info['playersmax']);
-						 ?>
-					</td>
-				</tr>
-				<?php if($info['nextmap']):?>
-				<tr>
-					<td class="bold">
-						Следующая карта:
-					</td>
-					<td>
-						 <?php echo CHtml::encode($info['nextmap']); ?>
-					</td>
-				</tr>
-				<?php endif?>
-				<?php if($info['timeleft']):?>
-				<tr>
-					<td class="bold">
-						До смены карты:
-					</td>
-					<td>
-						 <?php echo CHtml::encode($info['timeleft']); ?>
-					</td>
-				</tr>
-				<?php endif?>
-				<?php if($info['contact']):?>
-				<tr>
-					<td class="bold">
-						Контакты:
-					</td>
-					<td>
-						 <?php echo CHtml::encode($info['contact']); ?>
-					</td>
-				</tr>
-				<?php endif?>
-			</table>
-		</div>
-	</div>
-	<?php else: ?>
-	<h2>Детали сервера &laquo;<?php echo $server->hostname; ?>&raquo;</h2>
-	<div class="alert alert-error">
-		Сервер не отвечает. Возможно сервер выключен или сменяет карту
-	</div>
-	<?php endif; ?>
+		<?php if(!Yii::app()->user->isGuest): ?>
+			<p class="text-success">
+				<i class="icon-exclamation-sign"></i>
+				<i>Нажмите правой кнопкой на игроке для вызова меню</i>
+			</p>
+		<?php endif; ?>
+
+		<div class="row-fluid">
+			<div class="span7">
+				<?php if(is_array($info['playersinfo']) && !empty($info['playersinfo'])): ?>
+					<h5 class="text-center">Игроки</h5>
+					<table class="table table-bordered" id="players">
+						<thead>
+						<th>Ник</th>
+						<th style="text-align: center">Счет</th>
+						<th style="text-align: center">Время</th>
+						</thead>
+						<tbody>
+						<?php foreach($info['playersinfo'] as $player):?>
+							<tr class="context-menu-one" id="<?php echo CHtml::encode($player['name'])?>">
+								<td><?php echo CHtml::encode($player['name'])?></td>
+								<td style="text-align: center"><?php echo CHtml::encode($player['score'])?></td>
+								<td style="text-align: center"><?php echo function_exists('query_live') ? $player['time'] : Prefs::date2word(intval($player['time']), FALSE, TRUE)?></td>
+							</tr>
+						<?php endforeach;?>
+						</tbody>
+					</table>
+				<?php else: ?>
+					<div class="alert alert-error">Нет игроков</div>
+				<?php endif; ?>
+            </div>
+            <div class="span5">
+                <h5 class="text-center">Информация</h5>
+                <table class="table table-bordered">
+                    <tr>
+                        <td style="text-align: center" colspan="2">
+                            <?php echo $info['mapimg']; ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="bold">Адрес:</td>
+                        <td><?php echo CHtml::link(CHtml::encode($server->address), 'steam://connect/' . CHtml::encode($server->address)); ?></td>
+                    </tr>
+                    <tr>
+                        <td class="bold">Карта:</td>
+                        <td><?php echo CHtml::encode($info['map']); ?></td>
+                    </tr>
+                    <tr>
+                        <td class="bold">Игроки:</td>
+                        <td><?php echo CHtml::encode($info['players']) . '/' . CHtml::encode($info['playersmax']); ?></td>
+                    </tr>
+                    <?php if($info['nextmap']):?>
+                        <tr>
+                            <td class="bold">Следующая карта:</td>
+                            <td><?php echo CHtml::encode($info['nextmap']); ?></td>
+                        </tr>
+                    <?php endif?>
+
+                    <?php if($info['timeleft']):?>
+                        <tr>
+                            <td class="bold">До смены карты:</td>
+                            <td><?php echo CHtml::encode($info['timeleft']); ?></td>
+                        </tr>
+                    <?php endif?>
+
+                    <?php if($info['contact']):?>
+                        <tr>
+                            <td class="bold">Контакты:</td>
+                            <td><?php echo CHtml::encode($info['contact']); ?></td>
+                        </tr>
+                    <?php endif?>
+                </table>
+            </div>
+        </div>
+    <?php else: ?>
+        <h2>Детали сервера &laquo;<?php echo $server->hostname; ?>&raquo;</h2>
+        <div class="alert alert-error">Сервер не отвечает. Возможно сервер выключен или сменяет карту</div>
+    <?php endif; ?>
 </div>
