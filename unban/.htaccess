@@ -1,0 +1,13 @@
+AddDefaultCharset utf-8
+RewriteEngine on
+RewriteRule ^adm/$    /admin/index.php [L]
+RewriteRule ^auth/$    /admin/auth.php [L]
+RewriteRule ^logout/$    /admin/logout.php [L]
+RewriteRule ^login/$    /admin/login.php [L]
+RewriteRule ^dologin/$    /admin/dologin.php [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f  
+RewriteCond %{REQUEST_FILENAME} !-d  
+RewriteRule ^(([^/]+/)*[^.]+)$ /$1.php [L]
+
+ErrorDocument 404 /404-error

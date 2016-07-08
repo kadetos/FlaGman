@@ -1,0 +1,296 @@
+/* utility class style */
+.title-small .uk-panel-title {
+  font-size: 14px;
+}
+.title-large .uk-panel-title {
+  font-size: 24px;
+}
+.text-small .panel-content {
+  font-size: 11px;
+}
+.text-large .panel-content {
+  font-size: 27px;
+}
+.title-bold .uk-panel-title {
+  font-weight: bold;
+}
+.title-uppercase .uk-panel-title {
+  text-transform: uppercase;
+}
+.title-lowercase .uk-panel-title {
+  text-transform: lowercase;
+}
+.title-capitalize .uk-panel-title {
+  text-transform: capitalize;
+}
+.text-uppercase .panel-content {
+  text-transform: uppercase;
+}
+.text-center .panel-content {
+  text-align: center;
+}
+.title-center .uk-panel-title {
+  text-align: center;
+}
+.no-margin-top {
+  margin-top: 0 !important;
+}
+.no-margin-right {
+  margin-right: 0 !important;
+}
+.no-margin-bottom {
+  margin-bottom: 0 !important;
+}
+.no-margin-left {
+  margin-left: 0 !important;
+}
+.no-margin-all {
+  margin: 0 !important;
+}
+.no-padding-top {
+  padding-top: 0 !important;
+}
+.no-padding-right {
+  padding-right: 0 !important;
+}
+.no-padding-bottom {
+  padding-bottom: 0 !important;
+}
+.no-padding-left {
+  padding-left: 0 !important;
+}
+.no-padding-all {
+  padding: 0 !important;
+}
+.small-margin-bottom {
+  margin-bottom: 5px !important;
+}
+.small-margin-top {
+  margin-top: 5px !important;
+}
+.small-margin-left {
+  margin-left: 5px !important;
+}
+.small-margin-right {
+  margin-right: 5px !important;
+}
+.small-margin-all {
+  margin: 5px !important;
+}
+.medium-margin-bottom {
+  margin-bottom: 10px !important;
+}
+.medium-margin-top {
+  margin-top: 10px !important;
+}
+.medium-margin-left {
+  margin-left: 10px !important;
+}
+.medium-margin-right {
+  margin-right: 10px !important;
+}
+.medium-margin-all {
+  margin: 10px !important;
+}
+.large-margin-bottom {
+  margin-bottom: 15px !important;
+}
+.large-margin-top {
+  margin-top: 15px !important;
+}
+.large-margin-left {
+  margin-left: 15px !important;
+}
+.large-margin-right {
+  margin-right: 15px !important;
+}
+.large-margin-all {
+  margin: 15px !important;
+}
+.small-padding-bottom {
+  padding-bottom: 5px !important;
+}
+.small-padding-top {
+  padding-top: 5px !important;
+}
+.small-padding-left {
+  padding-left: 5px !important;
+}
+.small-padding-right {
+  padding-right: 5px !important;
+}
+.small-padding-all {
+  padding: 5px !important;
+}
+.medium-padding-bottom {
+  padding-bottom: 10px !important;
+}
+.medium-padding-top {
+  padding-top: 10px !important;
+}
+.medium-padding-left {
+  padding-left: 10px !important;
+}
+.medium-padding-right {
+  padding-right: 10px !important;
+}
+.medium-padding-all {
+  padding: 10px !important;
+}
+.large-padding-bottom {
+  padding-bottom: 15px !important;
+}
+.large-padding-top {
+  padding-top: 15px !important;
+}
+.large-padding-left {
+  padding-left: 15px !important;
+}
+.large-padding-right {
+  padding-right: 15px !important;
+}
+.large-padding-all {
+  padding: 15px !important;
+}
+.sub-small-margin-bottom {
+  margin-bottom: -5px !important;
+}
+.sub-small-margin-top {
+  margin-top: -5px !important;
+}
+.sub-small-margin-left {
+  margin-left: -5px !important;
+}
+.sub-small-margin-right {
+  margin-right: -5px !important;
+}
+.sub-small-margin-all {
+  margin: -5px !important;
+}
+.sub-medium-margin-bottom {
+  margin-bottom: -10px !important;
+}
+.sub-medium-margin-top {
+  margin-top: -10px !important;
+}
+.sub-medium-margin-left {
+  margin-left: -10px !important;
+}
+.sub-medium-margin-right {
+  margin-right: -10px !important;
+}
+.sub-medium-margin-all {
+  margin: -10px !important;
+}
+.sub-large-margin-bottom {
+  margin-bottom: -15px !important;
+}
+.sub-large-margin-top {
+  margin-top: -15px !important;
+}
+.sub-large-margin-left {
+  margin-left: -15px !important;
+}
+.sub-large-margin-right {
+  margin-right: -15px !important;
+}
+.sub-large-margin-all {
+  margin: -15px !important;
+}
+.sub-small-padding-bottom {
+  padding-bottom: -5px !important;
+}
+.sub-small-padding-top {
+  padding-top: -5px !important;
+}
+.sub-small-padding-left {
+  padding-left: -5px !important;
+}
+.sub-small-padding-right {
+  padding-right: -5px !important;
+}
+.sub-small-padding-all {
+  padding: -5px !important;
+}
+.sub-medium-padding-bottom {
+  padding-bottom: -10px !important;
+}
+.sub-medium-padding-top {
+  padding-top: -10px !important;
+}
+.sub-medium-padding-left {
+  padding-left: -10px !important;
+}
+.sub-medium-padding-right {
+  padding-right: -10px !important;
+}
+.sub-medium-padding-all {
+  padding: -10px !important;
+}
+.sub-large-padding-bottom {
+  padding-bottom: -15px !important;
+}
+.sub-large-padding-top {
+  padding-top: -15px !important;
+}
+.sub-large-padding-left {
+  padding-left: -15px !important;
+}
+.sub-large-padding-right {
+  padding-right: -15px !important;
+}
+.sub-large-padding-all {
+  padding: -15px !important;
+}
+/* Title margin style */
+.title-margin .uk-panel-title {
+  margin: 30px !important;
+}
+.title-margin-left .uk-panel-title {
+  margin-left: 30px !important;
+}
+.title-margin-right .uk-panel-title {
+  margin-right: 30px !important;
+}
+.title-margin-top .uk-panel-title {
+  margin-top: 30px !important;
+}
+.title-margin-bottom .uk-panel-title {
+  margin-bottom: 30px !important;
+}
+.large-title-margin .uk-panel-title {
+  margin: 35px !important;
+}
+.large-title-margin-left .uk-panel-title {
+  margin-left: 40px !important;
+}
+.large-title-margin-right .uk-panel-title {
+  margin-right: 40px !important;
+}
+.large-title-margin-top .uk-panel-title {
+  margin-top: 40px !important;
+}
+.large-title-margin-bottom .uk-panel-title {
+  margin-bottom: 40px !important;
+}
+.small-title-margin .uk-panel-title {
+  margin: 15px !important;
+}
+.small-title-margin-left .uk-panel-title {
+  margin-left: 15px !important;
+}
+.small-title-margin-right .uk-panel-title {
+  margin-right: 15px !important;
+}
+.small-title-margin-top .uk-panel-title {
+  margin-top: 15px !important;
+}
+.small-title-margin-bottom .uk-panel-title {
+  margin-bottom: 15px !important;
+}
+
+.list-style-arrow {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
