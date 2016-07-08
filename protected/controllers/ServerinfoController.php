@@ -1,15 +1,14 @@
 <?php
 /**
- * Контроллер серверов
+ * @author FlaGman Team
+ * @package CS:Bans for FlaGman
+ * @version 1.1
+ * @link http://www.s-play.pro/
+ *
  */
 
 /**
- * @author Craft-Soft Team
- * @package CS:Bans
- * @version 1.0 beta
- * @copyright (C)2013 Craft-Soft.ru.  Все права защищены.
- * @link http://craft-soft.ru/
- * @license http://creativecommons.org/licenses/by-nc-sa/4.0/deed.ru  «Attribution-NonCommercial-ShareAlike»
+ * Контроллер серверов
  */
 class ServerinfoController extends Controller
 {
