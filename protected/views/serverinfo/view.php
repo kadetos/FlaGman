@@ -142,6 +142,7 @@ endif;
 					<div class="alert alert-error">Нет игроков</div>
 				<?php endif; ?>
             </div>
+
             <div class="span5">
                 <h5 class="text-center">Информация</h5>
                 <table class="table table-bordered">
@@ -185,8 +186,10 @@ endif;
                 </table>
             </div>
         </div>
+
     <?php else: ?>
         <h2>Детали сервера &laquo;<?php echo $server->hostname; ?>&raquo;</h2>
         <div class="alert alert-error">Сервер не отвечает. Возможно сервер выключен или сменяет карту</div>
     <?php endif; ?>
+    
 </div>
